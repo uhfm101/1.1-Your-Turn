@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href = "style.css" rel = "stylesheet" type = "text/css" />
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div>
+    <canvas id = "myChart"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["0","1", "2", "3","4 or more"],
+            datasets: [{
+                label: "How many pets do you own?",
+                data: [8, 3, 2, 0, 0],
+                backgroundColor: [
+                    "rgba(255, 0, 0, 0.2)",
+                    "rgba(0, 255, 0, 0.2)",
+                    "rgba(0, 0, 255, 0.2)",
+                    "rgba(150, 150, 150, 0.2)",
+                    "rgba(50, 50, 200, 0.2)"
+                ],
+                borderColor: [
+                    "rgba(0, 0, 0, 1)",
+                    "rgba(0, 0, 0, 1)",
+                    "rgba(0, 0, 0, 1)",
+                    "rgba(0, 0, 0, 1)",
+                    "rgba(0, 0, 0, 1)"
+                ],
+                borderWidth: 5
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                },
+                x: {
+                    ticks:{
+                        stepSize: 1
+                    }
+                }
+            },
+            indexAxis: "x"
+        }
+    });
+</script>
+
+</body>
+</html>
